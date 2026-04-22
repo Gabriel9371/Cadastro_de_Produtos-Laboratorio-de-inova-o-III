@@ -14,6 +14,8 @@ public class Produtos {
     private Long id;
     private String nome;
     private String descricao;
+
+    //adicionado
     private Integer qtd;
     private Double preco;
     private LocalDateTime criadoEm;
