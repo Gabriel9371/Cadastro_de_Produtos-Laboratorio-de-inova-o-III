@@ -23,6 +23,7 @@ public class Produtos {
 
 
     public Produtos(){
+        this.atualizadoEm = LocalDateTime.now();
 
     }
 

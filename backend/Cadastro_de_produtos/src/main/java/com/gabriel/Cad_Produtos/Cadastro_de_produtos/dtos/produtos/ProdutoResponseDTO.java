@@ -46,10 +46,6 @@ public class ProdutoResponseDTO {
         return criadoEm;
     }
 
-    public void setCriadoEm(LocalDateTime criadoEm) {
-        this.criadoEm = criadoEm;
-    }
-
     public LocalDateTime getAtualizadoEm() {
         return atualizadoEm;
     }

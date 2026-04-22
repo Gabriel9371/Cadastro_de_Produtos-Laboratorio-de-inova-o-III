@@ -28,7 +28,6 @@ public class ProdutoMapper {
         response.setNome(produto.getNome());
         response.setPreco(produto.getPreco());
         response.setDescricao(produto.getDescricao());
-        response.setCriadoEm(produto.getCriadoEm());
 
         return response;
     }
