@@ -1,9 +1,11 @@
 package com.gabriel.Cad_Produtos.Cadastro_de_produtos.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/home")
+@RestController()
+@RequestMapping("/home")
 public class HomePage {
 
     //Pagina Home pra sera feita com react depois mas por agora apenas pra ter uma rota acessivel deixei isso...
