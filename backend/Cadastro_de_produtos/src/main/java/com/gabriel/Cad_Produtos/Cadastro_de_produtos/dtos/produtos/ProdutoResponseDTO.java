@@ -1,29 +1,14 @@
-package com.gabriel.Cad_Produtos.Cadastro_de_produtos.model;
-
-
-import jakarta.persistence.*;
+package com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "Produtos_")
-public class Produtos {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProdutoResponseDTO {
     private Long id;
     private String nome;
     private String descricao;
-    private Integer qtd;
     private Double preco;
     private LocalDateTime criadoEm;
     private LocalDateTime atualizadoEm;
-
-
-    public Produtos(){
-
-    }
-
 
     public Long getId() {
         return id;
@@ -31,14 +16,6 @@ public class Produtos {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(Integer qtd) {
-        this.qtd = qtd;
     }
 
     public String getNome() {
@@ -65,7 +42,6 @@ public class Produtos {
         this.preco = preco;
     }
 
-
     public LocalDateTime getCriadoEm() {
         return criadoEm;
     }
@@ -80,15 +56,5 @@ public class Produtos {
 
     public void setAtualizadoEm(LocalDateTime atualizadoEm) {
         this.atualizadoEm = atualizadoEm;
-    }
-
-
-    //primeira vez que uso LocalDateTime vou descobrir agora se funciona ou não! :)
-    public void prePersist(){
-        this.criadoEm = LocalDateTime.now();
-
-    }
-    public void preUpdate(){
-        this.atualizadoEm = LocalDateTime.now();
     }
 }
