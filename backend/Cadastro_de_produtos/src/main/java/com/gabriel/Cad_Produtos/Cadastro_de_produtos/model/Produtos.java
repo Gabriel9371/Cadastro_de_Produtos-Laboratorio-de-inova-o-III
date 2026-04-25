@@ -23,7 +23,8 @@ public class Produtos {
 
 
     public Produtos(){
-        this.atualizadoEm = LocalDateTime.now();
+        //this.atualizadoEm = LocalDateTime.now();
+        this.criadoEm = LocalDateTime.now();
 
     }
 

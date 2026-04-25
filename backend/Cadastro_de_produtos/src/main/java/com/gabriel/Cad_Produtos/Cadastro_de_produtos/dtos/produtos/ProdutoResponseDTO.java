@@ -10,6 +10,9 @@ public class ProdutoResponseDTO {
     private LocalDateTime criadoEm;
     private LocalDateTime atualizadoEm;
 
+
+
+
     public Long getId() {
         return id;
     }
@@ -44,6 +47,10 @@ public class ProdutoResponseDTO {
 
     public LocalDateTime getCriadoEm() {
         return criadoEm;
+    }
+
+    public void setCriadoEm(LocalDateTime criadoEm) {
+        this.criadoEm = criadoEm;
     }
 
     public LocalDateTime getAtualizadoEm() {
