@@ -8,9 +8,11 @@ import com.gabriel.Cad_Produtos.Cadastro_de_produtos.repository.ProdutoRepositor
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class ProdutoService {
+    Gerador_codBarras gen = new Gerador_codBarras();
     private final ProdutoMapper produtoMapper;
     private final ProdutoRepository repository;
 
@@ -27,7 +29,20 @@ public class ProdutoService {
     }
 
     public ProdutoResponseDTO createProduto(ProdutoCreateRequestDTO dto){
+        if (dto.getAtivo() == null && dto.getServico() == null) {
+            dto.setAtivo(true);
+            dto.setServico(false);
+
+        }
+
+        if (dto.getCod_barras() == null){
+
+            dto.setCod_barras(gen.gerar_codigoDeBarras());
+        }
+
         Produtos produto = produtoMapper.toEntity(dto);
+
+
         Produtos saveProduto = repository.save(produto);
 
         return produtoMapper.toResponse(saveProduto);
