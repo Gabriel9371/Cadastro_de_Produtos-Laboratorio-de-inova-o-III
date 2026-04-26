@@ -33,4 +33,11 @@ public class ProdutoController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProdutoResponseDTO> listProductById(@PathVariable Long id){
+        ProdutoResponseDTO product = service.listProdutoById(id);
+
+        return ResponseEntity.ok(product);
+    }
 }

@@ -2,13 +2,13 @@ package com.gabriel.Cad_Produtos.Cadastro_de_produtos.service;
 
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ProdutoCreateRequestDTO;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ProdutoResponseDTO;
+import com.gabriel.Cad_Produtos.Cadastro_de_produtos.exception.ProdutctNotFoundException;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.mapper.ProdutoMapper;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.model.Produtos;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.repository.ProdutoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Random;
 
 @Service
 public class ProdutoService {
@@ -47,9 +47,15 @@ public class ProdutoService {
 
         return produtoMapper.toResponse(saveProduto);
     }
+    public ProdutoResponseDTO listProdutoById(Long id){
+      Produtos produto = repository.findById(id).orElseThrow(
+              () -> new ProdutctNotFoundException(id)
+      );
 
-//    public ProdutoResponseDTO listProdutoById(Long id){
-//        Produtos produto = repository.findById(id).orElseThrow();
-//
-//    }
+      return produtoMapper.toResponse(produto);
+    }
+
+
+
+
 }
