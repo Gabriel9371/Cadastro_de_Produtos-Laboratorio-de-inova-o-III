@@ -8,7 +8,7 @@ public class ProdutoResponseDTO {
     private String descricao;
     private Double preco;
     private LocalDateTime criadoEm;
-    private LocalDateTime atualizadoEm;
+
 
     private Integer estoque_inicial;
     private Integer estoque_minimo;
@@ -63,13 +63,6 @@ public class ProdutoResponseDTO {
         this.criadoEm = criadoEm;
     }
 
-    public LocalDateTime getAtualizadoEm() {
-        return atualizadoEm;
-    }
-
-    public void setAtualizadoEm(LocalDateTime atualizadoEm) {
-        this.atualizadoEm = atualizadoEm;
-    }
 
     public Integer getEstoque_inicial() {
         return estoque_inicial;

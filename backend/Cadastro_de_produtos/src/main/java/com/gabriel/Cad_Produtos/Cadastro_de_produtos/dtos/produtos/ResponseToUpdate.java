@@ -1,48 +1,33 @@
 package com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import java.time.LocalDateTime;
 
-public class ProdutoCreateRequestDTO {
-
-    @NotBlank
+public class ResponseToUpdate {
+    private Long id;
+    private LocalDateTime atualizadoEm;
     private String nome;
-    @NotBlank
     private String descricao;
 
-    @NotNull
     private Double preco;
 
-    @NotNull
-    private Integer qtd;
 
-    @NotBlank
     private String cod_barras;
-    @NotBlank
     private String categoria;
 
-    @NotNull
     private Integer estoque_inicial;
-    @NotNull
-    private Integer estoque_minimo;
 
-    @NotBlank
     private String Un;
-
-
     private String marca;
     private String grupo;
     private Boolean ativo;
     private Boolean servico;
 
-
-    public Integer getQtd() {
-        return qtd;
+    public LocalDateTime getAtualizadoEm() {
+        return atualizadoEm;
     }
 
-    public void setQtd(Integer qtd) {
-        this.qtd = qtd;
+    public void setAtualizadoEm(LocalDateTime atualizadoEm) {
+        this.atualizadoEm = atualizadoEm;
     }
 
     public String getNome() {
@@ -93,14 +78,6 @@ public class ProdutoCreateRequestDTO {
         this.estoque_inicial = estoque_inicial;
     }
 
-    public Integer getEstoque_minimo() {
-        return estoque_minimo;
-    }
-
-    public void setEstoque_minimo(Integer estoque_minimo) {
-        this.estoque_minimo = estoque_minimo;
-    }
-
     public String getUn() {
         return Un;
     }
@@ -139,5 +116,13 @@ public class ProdutoCreateRequestDTO {
 
     public void setServico(Boolean servico) {
         this.servico = servico;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

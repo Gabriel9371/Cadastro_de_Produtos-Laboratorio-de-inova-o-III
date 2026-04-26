@@ -1,48 +1,35 @@
 package com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
-public class ProdutoCreateRequestDTO {
+import java.time.LocalDateTime;
 
-    @NotBlank
+public class ProdutoUpdate {
+    private LocalDateTime atualizado_em;
+
     private String nome;
-    @NotBlank
     private String descricao;
 
-    @NotNull
     private Double preco;
 
-    @NotNull
-    private Integer qtd;
 
-    @NotBlank
     private String cod_barras;
-    @NotBlank
     private String categoria;
 
-    @NotNull
     private Integer estoque_inicial;
-    @NotNull
-    private Integer estoque_minimo;
 
-    @NotBlank
     private String Un;
-
-
     private String marca;
     private String grupo;
     private Boolean ativo;
     private Boolean servico;
 
-
-    public Integer getQtd() {
-        return qtd;
+    public LocalDateTime getAtualizado_em() {
+        return atualizado_em;
     }
 
-    public void setQtd(Integer qtd) {
-        this.qtd = qtd;
+    public void setAtualizado_em(LocalDateTime atualizado_em) {
+        this.atualizado_em = atualizado_em;
     }
 
     public String getNome() {
@@ -93,13 +80,6 @@ public class ProdutoCreateRequestDTO {
         this.estoque_inicial = estoque_inicial;
     }
 
-    public Integer getEstoque_minimo() {
-        return estoque_minimo;
-    }
-
-    public void setEstoque_minimo(Integer estoque_minimo) {
-        this.estoque_minimo = estoque_minimo;
-    }
 
     public String getUn() {
         return Un;

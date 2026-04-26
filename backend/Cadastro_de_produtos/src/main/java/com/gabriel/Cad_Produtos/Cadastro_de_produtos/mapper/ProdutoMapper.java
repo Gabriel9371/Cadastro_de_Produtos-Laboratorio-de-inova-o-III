@@ -3,6 +3,7 @@ package com.gabriel.Cad_Produtos.Cadastro_de_produtos.mapper;
 
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ProdutoCreateRequestDTO;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ProdutoResponseDTO;
+import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ResponseToUpdate;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.model.Produtos;
 import org.springframework.stereotype.Component;
 
@@ -51,6 +52,28 @@ public class ProdutoMapper {
         response.setCod_barras(produto.getCod_barras());
 
         return response;
+    }
+
+    public ResponseToUpdate toResponseTdoUpdate(Produtos produto){
+        ResponseToUpdate updateProduct = new ResponseToUpdate();
+
+        updateProduct.setId(produto.getId());
+        updateProduct.setNome(produto.getNome());
+        updateProduct.setPreco(produto.getPreco());
+        updateProduct.setDescricao(produto.getDescricao());
+        updateProduct.setAtualizadoEm(produto.getAtualizadoEm());
+
+        updateProduct.setServico(produto.getServico());
+        updateProduct.setAtivo(produto.getAtivo());
+        updateProduct.setGrupo(produto.getGrupo());
+        updateProduct.setMarca(produto.getMarca());
+        updateProduct.setUn(produto.getUn());
+        updateProduct.setEstoque_inicial(produto.getEstoque_inicial());
+        updateProduct.setCategoria(produto.getCategoria());
+        updateProduct.setCod_barras(produto.getCod_barras());
+
+        return updateProduct;
+
     }
 
 
