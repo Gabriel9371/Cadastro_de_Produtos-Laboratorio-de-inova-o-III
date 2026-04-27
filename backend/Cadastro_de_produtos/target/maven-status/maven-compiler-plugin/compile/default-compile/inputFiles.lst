@@ -1,0 +1,13 @@
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/CadastroDeProdutosApplication.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/controller/HomePage.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/controller/ProdutoController.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/dtos/produtos/ProdutoCreateRequestDTO.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/dtos/produtos/ProdutoResponseDTO.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/dtos/produtos/ProdutoUpdate.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/dtos/produtos/ResponseToUpdate.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/exception/ProdutctNotFoundException.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/mapper/ProdutoMapper.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/model/Produtos.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/repository/ProdutoRepository.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/service/Gerador_codBarras.java
+/home/gabriel/CadProdutos/backend/Cadastro_de_produtos/src/main/java/com/gabriel/Cad_Produtos/Cadastro_de_produtos/service/ProdutoService.java
