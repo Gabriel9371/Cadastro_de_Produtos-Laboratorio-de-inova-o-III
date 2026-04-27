@@ -1,5 +1,3 @@
-# StockLab — Gerenciamento de Produtos
-
 Projeto desenvolvido para a disciplina de **Laboratório de Inovação**.  
 Este módulo é responsável por **Manter o cadastro de produtos**, incluindo backend REST em Java com Spring Boot e frontend em React.
 
