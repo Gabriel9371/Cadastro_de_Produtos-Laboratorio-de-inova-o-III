@@ -23,6 +23,7 @@ const camposFormulario = [
   { key: 'marca',           label: 'Marca',             tipo: 'text',   obrigatorio: false },
   { key: 'grupo',           label: 'Grupo',             tipo: 'text',   obrigatorio: false },
   { key: 'cod_barras',      label: 'Cód. de Barras',    tipo: 'text',   obrigatorio: false },
+  { key: 'url_img',         label: 'URL da imagem',     tipo: 'text',   obrigatorio: false}
 ];
 
 const valorInicial = {
@@ -30,6 +31,7 @@ const valorInicial = {
   estoque_inicial: '', estoque_minimo: '', Un: '',
   marca: '', grupo: '', cod_barras: '',
   ativo: true, servico: false,
+  url_img: '',
 };
 
 export default function ProdutoForm({ produtoEditar, onSalvar, onCancelar, carregando }) {
@@ -38,6 +40,7 @@ export default function ProdutoForm({ produtoEditar, onSalvar, onCancelar, carre
   useEffect(() => {
     if (produtoEditar) {
       setForm({
+        url_img:         produtoEditar.url_img           ?? '',
         nome:             produtoEditar.nome             ?? '',
         descricao:        produtoEditar.descricao        ?? '',
         preco:            produtoEditar.preco            ?? '',

@@ -2,6 +2,11 @@ import { useState, useEffect, useCallback } from 'react';
 import { api } from './api';
 import ProdutoForm from './ProdutoForm';
 import Home from './Home';
+import Login from './Login';
+
+
+
+
 
 export default function App() {
   const [tela, setTela]                   = useState('home');
@@ -14,11 +19,18 @@ export default function App() {
   const [modalAberto, setModalAberto]     = useState(false);
   const [produtoEditar, setProdutoEditar] = useState(null);
   const [deletandoId, setDeletandoId]     = useState(null);
+  const [usuario, setUsuario] = useState(null);
+
+  const podeGerenciar =
+  usuario?.role === "ADMIN" ||
+  usuario?.role === "VENDEDOR";
+
 
   const mostrarSucesso = (msg) => {
     setSucesso(msg);
     setTimeout(() => setSucesso(null), 3000);
   };
+
 
   const carregar = useCallback(async () => {
     setCarregando(true);
@@ -32,6 +44,9 @@ export default function App() {
       setCarregando(false);
     }
   }, []);
+
+
+  
 
   useEffect(() => {
     if (tela === 'produtos') carregar();
@@ -80,6 +95,10 @@ export default function App() {
     p.cod_barras?.toLowerCase().includes(busca.toLowerCase())
   );
 
+if(!usuario){
+  return <Login onLogin={setUsuario}/>
+}
+
   if (tela === 'home') {
     return <Home onIrParaProdutos={() => setTela('produtos')} />;
   }
@@ -94,7 +113,10 @@ export default function App() {
             {produtos.length} produto{produtos.length !== 1 ? 's' : ''} cadastrado{produtos.length !== 1 ? 's' : ''}
           </p>
         </div>
+        {podeGerenciar &&(
         <button onClick={abrirNovo} style={s.btnPrimario}>+ Novo produto</button>
+
+        )}
       </header>
 
       <div style={s.barraFiltro}>
@@ -137,8 +159,24 @@ export default function App() {
                 <tr key={p.id} style={s.tr}>
                   <td style={s.td}><span style={s.idBadge}>#{p.id}</span></td>
                   <td style={s.td}>
-                    <div style={s.nomeProduto}>{p.nome}</div>
-                    {p.marca && <div style={s.sub}>{p.marca}</div>}
+                    {p.url_img && (
+    <img
+      src={p.url_img}
+      alt={p.nome}
+      style={s.imagemProduto}
+    />
+  )}
+
+  <div style={s.nomeProduto}>
+    {p.nome}
+  </div>
+
+  {p.marca && (
+    <div style={s.sub}>
+      {p.marca}
+    </div>
+  )}
+
                   </td>
                   <td style={s.td}>{p.categoria ?? '—'}</td>
                   <td style={s.td}>
@@ -159,17 +197,22 @@ export default function App() {
                     {p.servico && <span style={s.badgeServico}>Serviço</span>}
                   </td>
                   <td style={s.td}>
-                    <div style={s.acoes}>
-                      <button onClick={() => abrirEditar(p)} style={s.btnEditar}>Editar</button>
-                      <button
-                        onClick={() => deletar(p.id)}
-                        disabled={deletandoId === p.id}
-                        style={s.btnDeletar}
-                      >
-                        {deletandoId === p.id ? '...' : 'Deletar'}
-                      </button>
-                    </div>
-                  </td>
+  {podeGerenciar && (
+    <div style={s.acoes}>
+      <button onClick={() => abrirEditar(p)} style={s.btnEditar}>
+        Editar
+      </button>
+
+      <button
+        onClick={() => deletar(p.id)}
+        disabled={deletandoId === p.id}
+        style={s.btnDeletar}
+      >
+        {deletandoId === p.id ? '...' : 'Deletar'}
+      </button>
+    </div>
+  )}
+</td>
                 </tr>
               ))}
             </tbody>
@@ -284,6 +327,14 @@ const s = {
     background: d.bgCard, color: d.cyan, cursor: 'pointer', fontSize: '0.78rem',
     fontFamily: 'inherit',
   },
+  imagemProduto: {
+    width: '50px',
+    height: '50px',
+    objectFit: 'cover',
+    borderRadius: '8px',
+    marginBottom: '6px',
+  },
+
   btnDeletar: {
     padding: '5px 10px', borderRadius: '6px', border: `1px solid ${d.red}`,
     background: d.bgCard, color: d.red, cursor: 'pointer', fontSize: '0.78rem',

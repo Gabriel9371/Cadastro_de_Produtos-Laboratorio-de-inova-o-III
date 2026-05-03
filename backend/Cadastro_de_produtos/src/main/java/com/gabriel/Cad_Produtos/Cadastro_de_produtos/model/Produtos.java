@@ -15,6 +15,7 @@ public class Produtos {
     private String nome;
     private String descricao;
 
+    private String url_img;
 
     private Integer qtd;
     private Double preco;
@@ -179,5 +180,13 @@ public class Produtos {
     }
 
     public void setEstoq() {
+    }
+
+    public String getUrl_img() {
+        return url_img;
+    }
+
+    public void setUrl_img(String url_img) {
+        this.url_img = url_img;
     }
 }

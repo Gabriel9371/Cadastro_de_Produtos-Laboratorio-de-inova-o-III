@@ -23,6 +23,7 @@ public class ProdutoUpdate {
     private String grupo;
     private Boolean ativo;
     private Boolean servico;
+    private String url_img;
 
     public LocalDateTime getAtualizado_em() {
         return atualizado_em;
@@ -119,5 +120,13 @@ public class ProdutoUpdate {
 
     public void setServico(Boolean servico) {
         this.servico = servico;
+    }
+
+    public String getUrl_img() {
+        return url_img;
+    }
+
+    public void setUrl_img(String url_img) {
+        this.url_img = url_img;
     }
 }

@@ -19,6 +19,7 @@ public class ProdutoResponseDTO {
     private Boolean servico;
     private String categoria;
     private String cod_barras;
+    private String url_img;
 
 
 
@@ -134,5 +135,13 @@ public class ProdutoResponseDTO {
 
     public void setCod_barras(String cod_barras) {
         this.cod_barras = cod_barras;
+    }
+
+    public String getUrl_img() {
+        return url_img;
+    }
+
+    public void setUrl_img(String url_img) {
+        this.url_img = url_img;
     }
 }

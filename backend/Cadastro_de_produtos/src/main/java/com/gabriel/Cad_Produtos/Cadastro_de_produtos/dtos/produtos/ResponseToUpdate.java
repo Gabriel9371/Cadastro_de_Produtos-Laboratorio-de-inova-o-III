@@ -21,6 +21,7 @@ public class ResponseToUpdate {
     private String grupo;
     private Boolean ativo;
     private Boolean servico;
+    private String url_img;
 
     public LocalDateTime getAtualizadoEm() {
         return atualizadoEm;
@@ -124,5 +125,13 @@ public class ResponseToUpdate {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUrl_img() {
+        return url_img;
+    }
+
+    public void setUrl_img(String url_img) {
+        this.url_img = url_img;
     }
 }

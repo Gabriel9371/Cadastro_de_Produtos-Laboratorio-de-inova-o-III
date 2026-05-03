@@ -28,6 +28,7 @@ public class ProdutoMapper {
         produto.setEstoque_inicial(produtosDto.getEstoque_inicial());
         produto.setEstoque_minimo(produtosDto.getEstoque_minimo());
         produto.setCod_barras(produtosDto.getCod_barras());
+        produto.setUrl_img(produtosDto.getUrl_img());
 
         return produto;
     }
@@ -50,6 +51,7 @@ public class ProdutoMapper {
         response.setEstoque_inicial(produto.getEstoque_inicial());
         response.setCategoria(produto.getCategoria());
         response.setCod_barras(produto.getCod_barras());
+        response.setUrl_img(produto.getUrl_img());
 
         return response;
     }
