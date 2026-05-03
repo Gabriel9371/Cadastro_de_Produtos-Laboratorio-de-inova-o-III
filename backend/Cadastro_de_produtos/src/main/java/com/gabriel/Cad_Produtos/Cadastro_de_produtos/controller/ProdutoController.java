@@ -8,6 +8,7 @@ import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ResponseToUpd
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.service.ProdutoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class ProdutoController {
     }
 
 
+    @PreAuthorize("hasAnyRole('ADMIN','VENDEDOR')")
     @PostMapping
     public ResponseEntity<ProdutoResponseDTO> createProdutc(@RequestBody ProdutoCreateRequestDTO dto){
         ProdutoResponseDTO produto = service.createProduto(dto);
@@ -44,6 +46,7 @@ public class ProdutoController {
         return ResponseEntity.ok(product);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','VENDEDOR')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProductById(@PathVariable Long id){
         service.deleteProductById(id);
@@ -51,6 +54,7 @@ public class ProdutoController {
         return ResponseEntity.noContent().build();
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN','VENDEDOR')")
     @PatchMapping("/{id}")
     public ResponseEntity<ResponseToUpdate> updateProdutct(@PathVariable Long id, @RequestBody ProdutoUpdate dto){
         ResponseToUpdate product = service.updateTotalProdutct(id, dto);
