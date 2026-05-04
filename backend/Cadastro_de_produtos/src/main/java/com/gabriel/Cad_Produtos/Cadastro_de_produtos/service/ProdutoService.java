@@ -109,6 +109,9 @@ public class ProdutoService {
             produto.setServico(dto.getServico());
         }
 
+        if(dto.getUrl_img() != null){
+            produto.setUrl_img(dto.getUrl_img());
+        }
         repository.save(produto);
 
         return produtoMapper.toResponseTdoUpdate(produto);
