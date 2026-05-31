@@ -11,10 +11,8 @@ public class ProdutoResponseDTO {
 
 
     private Integer estoque_inicial;
-    private Integer estoque_minimo;
     private String Un;
     private String marca;
-    private String grupo;
     private Boolean ativo;
     private Boolean servico;
     private String categoria;
@@ -73,13 +71,6 @@ public class ProdutoResponseDTO {
         this.estoque_inicial = estoque_inicial;
     }
 
-    public Integer getEstoque_minimo() {
-        return estoque_minimo;
-    }
-
-    public void setEstoque_minimo(Integer estoque_minimo) {
-        this.estoque_minimo = estoque_minimo;
-    }
 
     public String getUn() {
         return Un;
@@ -97,13 +88,6 @@ public class ProdutoResponseDTO {
         this.marca = marca;
     }
 
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
-    }
 
     public Boolean getAtivo() {
         return ativo;

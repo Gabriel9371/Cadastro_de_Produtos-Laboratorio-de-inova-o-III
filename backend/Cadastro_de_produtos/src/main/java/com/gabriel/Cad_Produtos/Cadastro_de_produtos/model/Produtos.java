@@ -17,17 +17,15 @@ public class Produtos {
 
     private String url_img;
 
-    private Integer qtd;
+
     private Double preco;
     private LocalDateTime criadoEm;
     private LocalDateTime atualizadoEm;
     private String cod_barras;
     private String categoria;
     private Integer estoque_inicial;
-    private Integer estoque_minimo;
     private String Un;
     private String marca;
-    private String grupo;
     private Boolean ativo;
     private Boolean servico;
 
@@ -48,13 +46,9 @@ public class Produtos {
         this.id = id;
     }
 
-    public Integer getQtd() {
-        return qtd;
-    }
 
-    public void setQtd(Integer qtd) {
-        this.qtd = qtd;
-    }
+
+
 
     public String getNome() {
         return nome;
@@ -131,13 +125,9 @@ public class Produtos {
         this.estoque_inicial = estoque_inicial;
     }
 
-    public Integer getEstoque_minimo() {
-        return estoque_minimo;
-    }
 
-    public void setEstoque_minimo(Integer estoque_minimo) {
-        this.estoque_minimo = estoque_minimo;
-    }
+
+
 
     public String getUn() {
         return Un;
@@ -155,13 +145,6 @@ public class Produtos {
         this.marca = marca;
     }
 
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
-    }
 
     public Boolean getAtivo() {
         return ativo;

@@ -17,16 +17,16 @@ public class ProdutoMapper {
         produto.setNome(produtosDto.getNome());
         produto.setDescricao(produtosDto.getDescricao());
         produto.setPreco(produtosDto.getPreco());
-        produto.setQtd(produtosDto.getQtd());
+
 
         produto.setAtivo(produtosDto.getAtivo());
         produto.setCategoria(produtosDto.getCategoria());
         produto.setServico(produtosDto.getServico());
-        produto.setGrupo(produtosDto.getGrupo());
+
         produto.setMarca(produtosDto.getMarca());
         produto.setUn(produtosDto.getUn());
         produto.setEstoque_inicial(produtosDto.getEstoque_inicial());
-        produto.setEstoque_minimo(produtosDto.getEstoque_minimo());
+
         produto.setCod_barras(produtosDto.getCod_barras());
         produto.setUrl_img(produtosDto.getUrl_img());
 
@@ -44,10 +44,10 @@ public class ProdutoMapper {
 
         response.setServico(produto.getServico());
         response.setAtivo(produto.getAtivo());
-        response.setGrupo(produto.getGrupo());
+
         response.setMarca(produto.getMarca());
         response.setUn(produto.getUn());
-        response.setEstoque_minimo(produto.getEstoque_minimo());
+
         response.setEstoque_inicial(produto.getEstoque_inicial());
         response.setCategoria(produto.getCategoria());
         response.setCod_barras(produto.getCod_barras());
@@ -67,7 +67,7 @@ public class ProdutoMapper {
 
         updateProduct.setServico(produto.getServico());
         updateProduct.setAtivo(produto.getAtivo());
-        updateProduct.setGrupo(produto.getGrupo());
+
         updateProduct.setMarca(produto.getMarca());
         updateProduct.setUn(produto.getUn());
         updateProduct.setEstoque_inicial(produto.getEstoque_inicial());

@@ -99,9 +99,7 @@ public class ProdutoService {
         if(dto.getMarca() != null){
             produto.setMarca(dto.getMarca());
         }
-        if(dto.getGrupo() != null){
-            produto.setGrupo(dto.getGrupo());
-        }
+
         if (dto.getAtivo() != null){
             produto.setAtivo(dto.getAtivo());
         }

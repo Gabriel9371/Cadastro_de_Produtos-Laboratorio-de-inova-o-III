@@ -20,7 +20,6 @@ public class ProdutoUpdate {
 
     private String Un;
     private String marca;
-    private String grupo;
     private Boolean ativo;
     private Boolean servico;
     private String url_img;
@@ -98,13 +97,6 @@ public class ProdutoUpdate {
         this.marca = marca;
     }
 
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
-    }
 
     public Boolean getAtivo() {
         return ativo;

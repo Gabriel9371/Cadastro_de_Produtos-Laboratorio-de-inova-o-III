@@ -1,6 +1,5 @@
 package com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos;
 
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -14,8 +13,6 @@ public class ProdutoCreateRequestDTO {
     @NotNull
     private Double preco;
 
-    @NotNull
-    private Integer qtd;
 
     @NotBlank
     private String cod_barras;
@@ -24,29 +21,17 @@ public class ProdutoCreateRequestDTO {
 
     @NotNull
     private Integer estoque_inicial;
-    @NotNull
-    private Integer estoque_minimo;
+
 
     @NotBlank
     private String Un;
 
     private String url_img;
 
-
-
     private String marca;
-    private String grupo;
     private Boolean ativo;
     private Boolean servico;
 
-
-    public Integer getQtd() {
-        return qtd;
-    }
-
-    public void setQtd(Integer qtd) {
-        this.qtd = qtd;
-    }
 
     public String getNome() {
         return nome;
@@ -96,13 +81,6 @@ public class ProdutoCreateRequestDTO {
         this.estoque_inicial = estoque_inicial;
     }
 
-    public Integer getEstoque_minimo() {
-        return estoque_minimo;
-    }
-
-    public void setEstoque_minimo(Integer estoque_minimo) {
-        this.estoque_minimo = estoque_minimo;
-    }
 
     public String getUn() {
         return Un;
@@ -118,14 +96,6 @@ public class ProdutoCreateRequestDTO {
 
     public void setMarca(String marca) {
         this.marca = marca;
-    }
-
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
     }
 
     public Boolean getAtivo() {
