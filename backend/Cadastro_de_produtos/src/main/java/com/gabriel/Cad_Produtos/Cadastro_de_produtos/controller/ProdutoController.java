@@ -6,6 +6,7 @@ import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ProdutoRespon
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ProdutoUpdate;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos.ResponseToUpdate;
 import com.gabriel.Cad_Produtos.Cadastro_de_produtos.service.ProdutoService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -33,7 +34,7 @@ public class ProdutoController {
 
     @PreAuthorize("hasAnyRole('ADMIN','VENDEDOR')")
     @PostMapping
-    public ResponseEntity<ProdutoResponseDTO> createProdutc(@RequestBody ProdutoCreateRequestDTO dto){
+    public ResponseEntity<ProdutoResponseDTO> createProdutc(@Valid  @RequestBody ProdutoCreateRequestDTO dto){
         ProdutoResponseDTO produto = service.createProduto(dto);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(produto);
@@ -56,7 +57,7 @@ public class ProdutoController {
 
     @PreAuthorize("hasAnyRole('ADMIN','VENDEDOR')")
     @PatchMapping("/{id}")
-    public ResponseEntity<ResponseToUpdate> updateProdutct(@PathVariable Long id, @RequestBody ProdutoUpdate dto){
+    public ResponseEntity<ResponseToUpdate> updateProdutct(@PathVariable Long id, @Valid @RequestBody ProdutoUpdate dto){
         ResponseToUpdate product = service.updateTotalProdutct(id, dto);
 
         return ResponseEntity.ok(product);

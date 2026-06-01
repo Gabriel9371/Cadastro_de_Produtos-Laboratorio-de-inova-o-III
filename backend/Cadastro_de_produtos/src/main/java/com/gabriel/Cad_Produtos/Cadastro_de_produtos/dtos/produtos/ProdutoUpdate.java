@@ -1,26 +1,38 @@
 package com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
 public class ProdutoUpdate {
     private LocalDateTime atualizado_em;
 
+    @NotBlank
     private String nome;
+    @NotBlank
     private String descricao;
 
+    @NotNull
+    @Min(1)
     private Double preco;
 
 
     private String cod_barras;
+
+    @NotNull
     private String categoria;
 
     private Integer estoque_inicial;
 
     private String Un;
+
+    @NotNull
     private String marca;
+
     private Boolean ativo;
+
     private Boolean servico;
     private String url_img;
 

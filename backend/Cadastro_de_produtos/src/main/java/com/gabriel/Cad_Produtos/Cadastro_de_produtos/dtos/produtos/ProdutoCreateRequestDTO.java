@@ -1,5 +1,6 @@
 package com.gabriel.Cad_Produtos.Cadastro_de_produtos.dtos.produtos;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,15 +12,16 @@ public class ProdutoCreateRequestDTO {
     private String descricao;
 
     @NotNull
+    @Min(1)
     private Double preco;
 
 
-    @NotBlank
     private String cod_barras;
     @NotBlank
     private String categoria;
 
     @NotNull
+    @Min(1)
     private Integer estoque_inicial;
 
 
